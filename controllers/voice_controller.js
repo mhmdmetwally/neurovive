@@ -20,7 +20,7 @@ exports.analyze_voice = async (req, res) => {
     } catch (error) {
         res.status(500).json({
             status: 'error',
-            message: error.message || 'Internal server error'
+            message: error.message || "AI processing failed"
         });
     }
 };

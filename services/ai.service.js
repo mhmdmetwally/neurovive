@@ -15,7 +15,7 @@ exports.send_toati = async (audioBuffer) => {
         form,
         {
             headers: form.getHeaders(),
-            maxBodyLength: Infinity
+            timeout: 30000,
         }
     );
 
