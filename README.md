@@ -27,10 +27,21 @@ Neurovive provides a REST API endpoint that:
 
 - This project demonstrates:
 
-= Backend architecture organization
+- Backend architecture organization
 
 - File upload handling with Multer
 
 - Clean controller/service separation
 
 - Serverless deployment using Vercel
+
+## - 🛠️ Tech Stack
+| Technology     | Purpose                         |
+| -------------- | ------------------------------- |
+| **Node.js**    | Runtime environment             |
+| **Express.js** | Web framework                   |
+| **Multer**     | File upload middleware          |
+| **Axios**      | External API requests           |
+| **Dotenv**     | Environment variable management |
+| **Vercel**     | Serverless deployment platform  |
+
