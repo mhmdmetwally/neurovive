@@ -14,8 +14,8 @@ exports.analyze_voice = async (req, res) => {
 
         res.json({
             status: "success",
-            prediction: ai_response.prediction,
-            confidence: ai_response.confidence,
+            label: ai_response.label,
+            probability: ai_response.probability,
         });
     } catch (error) {
         res.status(500).json({

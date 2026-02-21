@@ -15,7 +15,10 @@ app.use(express.json());
 app.use("/voice", voice_routes);
 
 // Global Error Handler (Multer + others)
- 
+ app.get("/", (req, res) => {
+  res.json({ message: "Neurovive API is running 🚀" });
+});
+
 app.use((err, req, res, next) => {
     if (err.name === "MulterError") {
         return res.status(400).json({

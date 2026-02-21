@@ -1,7 +1,13 @@
 const multer = require('multer');
 
 function file_filter(req, file, cb) {
-    const allowedTypes = ['audio/mpeg', 'audio/wav', 'audio/mp3', 'audio/x-wav'];
+    const allowedTypes = [
+        'audio/mpeg',
+         'audio/wav',
+          'audio/mp3', 
+         'audio/x-wav'
+    ]
+    ;
     if (allowedTypes.includes(file.mimetype)) {
         cb(null, true);
     } else {
