@@ -1,4 +1,4 @@
-const ai_service=require('../services/ai.service')
+const ai_service=require('../services/voice_ai_server')
 exports.analyze_voice = async (req, res) => {
     try {
         if (!req.file) {

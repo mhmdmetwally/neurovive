@@ -1,6 +1,6 @@
 const axios = require('axios');
 const FormData = require('form-data');
-const AI_SERVER_URL = process.env.AI_SERVER_URL;
+const AI_SERVER_URL = process.env.AI_SERVER_URL_VOICE;
 
 exports.send_toati = async (audioBuffer) => {
     const form = new FormData();
