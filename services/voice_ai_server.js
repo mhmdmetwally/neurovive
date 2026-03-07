@@ -10,7 +10,7 @@ exports.send_toati = async (audioBuffer) => {
         contentType: "audio/mpeg"
     });
 
-    console.log(AI_SERVER_URL);
+    console.log("ai server"+AI_SERVER_URL);
 
     const response = await axios.post(
         AI_SERVER_URL,
