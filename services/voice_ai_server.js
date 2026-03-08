@@ -6,11 +6,11 @@ exports.send_toati = async (audioBuffer) => {
     const form = new FormData();
 
     form.append("audio", audioBuffer, {
-        filename: "voice.mp3",
-        contentType: "audio/mpeg"
+        filename: "voice.wav",
+        contentType: "audio/x-wav"
     });
 
-    console.log("ai server"+AI_SERVER_URL);
+    console.log("ai server"+process.env);
 
     const response = await axios.post(
         AI_SERVER_URL,
