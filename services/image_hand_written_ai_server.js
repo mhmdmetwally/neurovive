@@ -6,7 +6,7 @@ exports.send_toati = async(imageBuffer)=>{
 
     form.append('image',imageBuffer,{
         filename:'image.png',
-        contentType:req.file.mimetype
+        contentType:'image/png'
     });
 
     const response = await axios.post(
