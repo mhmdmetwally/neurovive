@@ -2,7 +2,7 @@ const multer = require('multer');
 
 function file_filter (req,file,cb)
 {
-    const allowed_types=['jpg'];
+    const allowed_types=['png'];
     if(allowed_types.includes(file.mimetype))
         cb(null,false);
     else
