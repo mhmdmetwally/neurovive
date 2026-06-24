@@ -31,13 +31,33 @@ const PatientSchema = new mongoose.Schema({
         }
     },
     patient_history:[
-        {
-            date_of_test:Date,
-            test_type:String,
-            enum:['voice','spiral','circle'],
-            data:String,
-            enum:['image','audio'],
-            url:String
+         {
+            date_of_test: {
+                type: Date,
+                default: Date.now
+            },
+
+            test_type: {
+                type: String,
+                enum: ["voice", "spiral", "circle"],
+                required: true
+            },
+
+            data_type: {
+                type: String,
+                enum: ["image", "audio"],
+                required: true
+            },
+
+            test_result: {
+                type: Number,
+                required: true
+            },
+
+            url: {
+                type: String,
+                required: true
+            }
         }
     ],
     token:{
@@ -47,4 +67,4 @@ const PatientSchema = new mongoose.Schema({
 
 })
 
-module.exports = mongoose.model(Patient,PatientSchema);
+module.exports = mongoose.model('Patient',PatientSchema);

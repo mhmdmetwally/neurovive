@@ -3,8 +3,9 @@ const router = express.Router();
 
 const upload = require('../middleware/image_hand_written');
 const image_hand_written_controller = require('../controllers/image_hand_written_controller');
+const verify_token = require('../middleware/verify_token');
 
 
-router.post('/',upload.single('image'),image_hand_written_controller.image)
+router.post('/',verify_token,upload.single('image'),image_hand_written_controller.image)
 
 module.exports = router;

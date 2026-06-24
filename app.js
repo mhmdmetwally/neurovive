@@ -1,14 +1,23 @@
 const cors = require("cors");
 const express = require("express");
+const mongoose = require('mongoose');
 
 const voice_routes = require("./routes/voice_Routes");
 const image_hand_written_routes = require('./routes/image_hand_written_Routes')
 const app = express();
+const url = process.env.MONGO_URL;
 
 app.use(cors());
 
 app.use(express.json());
 
+//connect mongo
+console.log("MONGO =", process.env.MONGO_URL);
+mongoose.connect(url)
+    .then(() => console.log('db start'))
+    .catch((err) => console.error(err));
+
+    
 // Routes
 
 app.use("/voice", voice_routes);
