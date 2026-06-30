@@ -1,23 +1,56 @@
-const jwt=require('jsonwebtoken');
-const JWT_SECRET=process.env.JWT_SECRET;
-const verify_token=(req,res,next)=>{
+const jwt = require('jsonwebtoken');
 
-    const auth_header=req.headers["Authorization"] || req.headers["authorization"];
+
+const JWT_SECRET = process.env.JWT_SECRET;
+
+
+
+const verify_token = (req,res,next)=>{
+
+
+    const auth_header =
+    req.headers["authorization"];
+
+
+
     if(!auth_header)
     {
-        //as a guest
-        req.user = null;
+        req.user=null;
         return next();
     }
-    const token = auth_header.split(' ')[1];
-    try {
-        const decoded_token= jwt.verify(token,JWT_SECRET);    
-        req.user=decoded_token.payload;
+
+
+
+    const token = auth_header.split(" ")[1];
+
+
+    try{
+
+
+        const decoded = jwt.verify(
+            token,
+            JWT_SECRET
+        );
+
+
+        req.user = decoded.payload;
+
+
         next();
-    } catch (error) {
-        //as a guest
-        req.user = null;
+
+
+    }catch(error){
+
+        req.user=null;
+
         next();
+
     }
-}
-module.exports = verify_token ;
+
+
+};
+
+
+
+module.exports = verify_token;
+
