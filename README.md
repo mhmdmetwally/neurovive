@@ -324,7 +324,7 @@ npm install
 ## Run Development Server
 
 ```bash
-npm run dev
+npm run run:dev
 ```
 
 
