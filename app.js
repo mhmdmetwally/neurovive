@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 
 const voice_routes = require("./routes/voice_Routes");
 const image_hand_written_routes = require('./routes/image_hand_written_Routes')
+const user_routes = require('./routes/user');
 const app = express();
 const url = process.env.MONGO_URL;
 
@@ -24,6 +25,7 @@ app.use("/voice", voice_routes);
 
 app.use("/image",image_hand_written_routes);
 
+app.use("/user",user_routes);
  app.get("/", (req, res) => {
   res.json({ message: "Neurovive API is running 🚀" });
 });
